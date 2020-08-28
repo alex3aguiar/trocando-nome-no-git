@@ -13,8 +13,8 @@
   <p>git config --global --unset user.name</p>
   <p>git config --global --unset user.email</p>
   <p>echo 'git deslogado'</p>
-  <p>git config --global user.name {{ user }}</p>
-  <p>git config --global user.email {{ user }}</p>
+  <p>git config --global user.name "{{ user }}"</p>
+  <p>git config --global user.email "{{ email }}"</p>
   
   <hr>
   <input v-model="user">
@@ -26,10 +26,15 @@ const urlParams = new URLSearchParams(queryString);
 const userString = urlParams.get('user')
 console.log(userString);
   
+    
+const email = urlParams.get('email')
+console.log(email);
+  
  var app =  new Vue({
   el: '#app',
   data: {
-    user:userString ? userString:""
+    user:userString ? userString:"",
+    email:email ? email:""
   }
 })
 </script>
