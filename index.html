@@ -20,6 +20,8 @@
   <input v-model="user">
 </div>
 <script>
+const queryString = window.location.search;
+console.log(queryString);
 const user = urlParams.get('user')
 
  var app =  new Vue({
