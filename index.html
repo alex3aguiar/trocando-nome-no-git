@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+</head>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+
+<body>
+
+<h1>This is a Heading</h1>
+<p>This is a paragraph.</p>
+<div id="app">
+  <p>git config --global --unset user.name</p>
+  <p>git config --global --unset user.email</p>
+  <p>echo 'git deslogado'</p>
+  <p>git config --global user.name {{ user }}</p>
+  <p>git config --global user.email {{ user }}</p>
+  
+  <hr>
+  <input v-model="user">
+</div>
+<script>
+const user = urlParams.get('user')
+
+ var app =  new Vue({
+  el: '#app',
+  data: {
+    user:user
+  }
+})
+</script>
+</body>
+</html>
